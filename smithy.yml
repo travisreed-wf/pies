@@ -1,0 +1,25 @@
+project: python
+runtime: 2.7
+
+requirements:
+  - requirements.txt
+  - requirements_dev.txt
+
+env:
+  - LIKES=PIES
+  - EATS=TASTY_PIES
+
+before_install:
+
+install:
+
+before_script:
+
+script:
+  - nosetests
+  - python setup.py sdist
+
+after_script:
+
+before_release:
+
