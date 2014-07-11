@@ -8,7 +8,7 @@ requirements:
 env:
   - LIKES=PIES
   - EATS=TASTY_PIES
-  - EAT_PIES_SLOWLY=120
+  - EAT_PIES_SLOWLY=10
 
 before_install:
 
