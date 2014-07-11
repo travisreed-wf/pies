@@ -10,17 +10,8 @@ env:
   - EATS=TASTY_PIES
   - EAT_PIES_SLOWLY=10
 
-before_install:
-
-install:
-
-before_script:
-
 script:
   - nosetests
   - python setup.py sdist
 
-after_script:
-
-before_release:
-
+test_reports: 'test-xml'
