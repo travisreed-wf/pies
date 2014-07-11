@@ -13,6 +13,7 @@ env:
 script:
   - nosetests
   - python setup.py sdist
-  - cp -R test-xml test-results
+  - mkdir test-results
+  - cp test-xml/*.xml test-results/
 
 test_reports: 'test-results'
