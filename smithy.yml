@@ -14,6 +14,10 @@ script:
   - nosetests
   - python setup.py sdist
   - 'echo "TEST REPORTS DIR: $TEST_REPORTS_DIR"'
-  - cp test-xml/*.xml $TEST_REPORTS_DIR/
+  - mkdir test-reports || true
+  - cp test-xml/*.xml test-reports/
   - find . -type f -ls
-  - ls -al $TEST_REPORTS_DIR
+  - ls -al test-reports/
+
+test_reports:
+  - test-reports/*.xml
