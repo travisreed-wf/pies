@@ -8,12 +8,12 @@ requirements:
 env:
   - LIKES=PIES
   - EATS=TASTY_PIES
-  - EAT_PIES_SLOWLY=1
+  - EAT_PIES_SLOWLY=2
 
 script:
   - nosetests
   - python setup.py sdist
-  - 'echo "ALL UR BASE ARE BELONG TO US!!"'
+  - 'echo "ALL UR WEBFILINGS ARE BELONG TO WORKIVA"'
   - 'echo "TEST REPORTS DIR: $TEST_REPORTS_DIR"'
   - mkdir test-reports || true
   - cp test-xml/*.xml test-reports/
