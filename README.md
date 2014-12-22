@@ -1,6 +1,6 @@
 pies
 ====
 
-I like tasty pies. Do you? :) Yes
+I like tasty pies. Do you? :)
 
 
