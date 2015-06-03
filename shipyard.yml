@@ -1,0 +1,17 @@
+---
+base: 'ubuntu/trusty'
+
+apt:
+  packages:
+    - nginx
+
+add:
+  index.html: /usr/share/nginx/html/index.html
+
+after_install:
+  echo "daemon off;" >> /etc/nginx/nginx.conf
+
+expose:
+  - 80
+
+cmd: [ '/usr/sbin/nginx' ]
