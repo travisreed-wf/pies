@@ -1,32 +1,5 @@
 project: python
-runtime: 2.7
-
-requirements:
-  - requirements.txt
-  - requirements_dev.txt
-
-env:
-  - LIKES=PIES
-  - EATS=TASTY_PIES
-  - EAT_PIES_SLOWLY=2
+language: python
 
 script:
-  - nosetests
-  - python setup.py sdist
-  - 'echo "ALL UR WEBFILINGS ARE BELONG TO WORKIVA: $HOME"'
-  - ls -al $HOME
-  - touch $HOME/pies.txt
-  - 'echo "TEST REPORTS DIR: $TEST_REPORTS_DIR"'
-  - mkdir test-reports || true
-  - cp test-xml/*.xml test-reports/
-  - find . -type f -ls
-  - ls -al test-reports/
-  - ls -al $HOME
-
-after_script:
-  - tar -C docs -cvzf ./pie-help.tar.gz html
-
-documentation: pie-help.tar.gz
-
-test_reports:
-  - test-reports/*.xml
+  - echo "PIES"
