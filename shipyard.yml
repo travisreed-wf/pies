@@ -1,0 +1,6 @@
+---
+base: 'ubuntu/trusty'
+
+workdir: /foo/bar/baz
+
+cmd: ["echo", "Hello World", "$PWD"]
