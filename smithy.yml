@@ -11,6 +11,7 @@ env:
   - EAT_PIES_SLOWLY=2
 
 script:
+  - /bin/bash -c 'exit 1'
   - nosetests
   - python setup.py sdist
   - 'echo "ALL UR WEBFILINGS ARE BELONG TO WORKIVA: $HOME"'
