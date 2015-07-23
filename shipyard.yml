@@ -1,5 +1,5 @@
 ---
-base: 'ubuntu/precise'
+base: 'debian/wheezy'
 
 apt:
   packages:
