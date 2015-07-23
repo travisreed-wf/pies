@@ -1,5 +1,5 @@
 ---
-base: 'ubuntu/trusty'
+base: 'ubuntu/precise'
 
 apt:
   packages:
