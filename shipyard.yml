@@ -4,12 +4,15 @@ base: 'ubuntu/trusty'
 apt:
   packages:
     - nginx
+    - aescrypt
+    - gae-sdk
 
 add:
   index.html: /usr/share/nginx/html/index.html
 
 after_install:
   - echo "daemon off;" >> /etc/nginx/nginx.conf
+  - aescrypt --help
 
 expose:
   - 80
