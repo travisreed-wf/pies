@@ -25,4 +25,16 @@ if [ -n "$DEBUG" ]; then
    debug_arg=-d
 fi
 
-/usr/local/bin/load $workload_arg $arrival_arg $count_arg $seed_arg $debug_arg
+threads=1
+if [ -n "$THREADS" ]; then
+   threads=$THREADS
+fi
+
+i=0
+while [ $i -lt $threads ]; do
+   /usr/local/bin/load $workload_arg $arrival_arg $count_arg $seed_arg $debug_arg &
+   i=$(($i + 1))
+done
+
+wait
+echo "Done"
