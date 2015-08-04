@@ -123,8 +123,8 @@ struct timespec compute_interarrival_time(double lambda, int debug) {
    ret.tv_sec = (time_t) x;
    ret.tv_nsec = (x - (double)ret.tv_sec) * 1000000000;
    if ( debug ) {
-      fprintf(stdout, "tv_sec = %06d, tv_nsec = %09d ... ", 
-              ret.tv_sec, ret.tv_nsec);
+      fprintf(stdout, "tv_sec = %06ld, tv_nsec = %09ld ... ", 
+              (long) ret.tv_sec, (long) ret.tv_nsec);
       fflush(stdout);
    }
    return ret;
@@ -178,22 +178,22 @@ void run_load(struct CONF *confp) {
       clock_gettime(CLOCK_MONOTONIC_RAW, &t_end);
       sub_timespec(&t_end, &t_start);
       if ( confp->debug )
-         fprintf(stdout, " %d.%09d\n", t_end.tv_sec, t_end.tv_nsec);
+         fprintf(stdout, " %ld.%09ld\n", (long) t_end.tv_sec, (long) t_end.tv_nsec);
       add_timespec(&total_service_time, &t_end);
    }
    clock_gettime(CLOCK_MONOTONIC_RAW, &run_end);
    sub_timespec(&run_end, &run_start);
 
    fprintf(stdout, "===== RESULTS =====\n");
-   fprintf(stdout, "Total service time: %d.%09d(s)\n", 
-           total_service_time.tv_sec, total_service_time.tv_nsec);
+   fprintf(stdout, "Total service time: %ld.%09ld(s)\n", 
+           (long) total_service_time.tv_sec, (long) total_service_time.tv_nsec);
    fprintf(stdout, "Transactions: %06d\n", confp->count);
    double avg_service_time = ((double) total_service_time.tv_sec +
                               (double) total_service_time.tv_nsec / 
                               1000000000.0 ) / (double) confp->count;
    fprintf(stdout, "Avg ST(s) = %12.9f\n", avg_service_time);
-   fprintf(stdout, "Total response time: %d.%09d(s)\n",
-           run_end.tv_sec, run_end.tv_nsec);
+   fprintf(stdout, "Total response time: %ld.%09ld(s)\n",
+           (long) run_end.tv_sec, (long) run_end.tv_nsec);
    double transaction_rate = (double) confp->count / 
                              ((double) run_end.tv_sec +
                               (double) run_end.tv_nsec /

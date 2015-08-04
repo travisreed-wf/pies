@@ -10,6 +10,6 @@ add:
   load.c: /load/load.c
 
 after_install:
-  - gcc -o /usr/local/bin/load /load/load.c
+  - gcc -o /usr/local/bin/load /load/load.c -lm
 
 cmd: [ '/usr/local/bin/load.sh' ]
