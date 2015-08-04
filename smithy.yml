@@ -1,5 +1,5 @@
-project: python
-language: python
+project: C
+language: C
 
 script:
-  - echo "PIES"
+  - echo "Pies"

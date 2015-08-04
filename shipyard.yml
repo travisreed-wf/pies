@@ -1,20 +1,15 @@
 ---
-base: 'debian/wheezy'
+base: 'ubuntu/trusty'
 
 apt:
   packages:
-    - nginx
-    - aescrypt
-    - gae-sdk
+    - gcc
 
 add:
-  index.html: /usr/share/nginx/html/index.html
+  load.sh: /usr/local/bin/load.sh
+  load.c: /load/load.c
 
 after_install:
-  - echo "daemon off;" >> /etc/nginx/nginx.conf
-  - aescrypt --help
+  - gcc -o /usr/local/bin/load /load/load.c
 
-expose:
-  - 80
-
-cmd: [ '/usr/sbin/nginx' ]
+cmd: [ '/usr/local/bin/load.sh' ]
