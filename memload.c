@@ -54,7 +54,9 @@ void parse_args(int argc, char **argv, struct CONF *confp) {
 }
 
 void run_load(struct CONF *confp) {
-   void *mem = malloc(confp->start * 1024 * 1024);
+   void *mem = (char *) malloc(confp->start * 1024 * 1024);
+
+   memset(mem, 42, confp->start * 1024 * 1024);
    if ( confp->debug ) {
       fprintf(stdout, "Starting malloc = %d MB\n", confp->start);
       fprintf(stdout, "Sleeping %d seconds\n", confp->interval);
@@ -67,6 +69,7 @@ void run_load(struct CONF *confp) {
          fprintf(stdout, "Allocating %d more MB\n", confp->increment);
       }
       mem = malloc(confp->increment * 1024 * 1024);
+      memset(mem, 42, confp->increment * 1024 * 1024);
 
       if ( confp->debug ) {
          fprintf(stdout, "Sleeping %d seconds\n", confp->interval);
