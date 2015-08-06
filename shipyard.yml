@@ -8,8 +8,10 @@ apt:
 add:
   load.sh: /usr/local/bin/load.sh
   load.c: /load/load.c
+  memload.c: /load/memload.c
 
 after_install:
   - gcc -o /usr/local/bin/load /load/load.c -lm
+  - gcc -o /usr/local/bin/memload /load/memload.c
 
 cmd: [ '/usr/local/bin/load.sh' ]
