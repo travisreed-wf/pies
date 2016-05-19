@@ -1,18 +1,9 @@
-project: python
-runtime: 2.7
-
-requirements:
-  - requirements.txt
-  - requirements_dev.txt
-
-env:
-  - LIKES=PIES
-  - EATS=TASTY_PIES
-  - EAT_PIES_SLOWLY=1
+project: pub
+language: pub
 
 script:
-  - nosetests
-  - python setup.py sdist
+  - git ls-files --cached --others --exclude-standard . | tar -zcvf pies.tar.gz --files-from -
 
-test_reports:
-  - test-xml/*.xml
+artifacts:
+  pub:
+    - pies.tar.gz

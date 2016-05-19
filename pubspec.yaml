@@ -1,0 +1,6 @@
+name: pies
+version: 0.0.0
+description: Testing package
+homepage: https://github.com/Workiva/pies
+authors:
+  - Kevin Frommelt <kevin.frommelt@workiva.com>
