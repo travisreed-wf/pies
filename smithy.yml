@@ -2,8 +2,9 @@ project: pub
 language: pub
 
 script:
-  - git ls-files --cached --others --exclude-standard . | tar -zcvf pies.tar.gz --files-from -
+  - echo 'pies'
+  #- git ls-files --cached --others --exclude-standard . | tar -zcvf pies.tar.gz --files-from -
 
 artifacts:
   pub:
-    - pies.tar.gz
+    - pies*.tar.gz
