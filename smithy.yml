@@ -3,8 +3,8 @@ language: pub
 
 script:
   - echo 'pies'
-  - cd pies && git ls-files --cached --others --exclude-standard . | tar -zcvf pies.tar.gz --files-from -
   - cd pies2 && git ls-files --cached --others --exclude-standard . | tar -zcvf pies2.tar.gz --files-from -
+  - cd pies3 && git ls-files --cached --others --exclude-standard . | tar -zcvf pies3.tar.gz --files-from -
 
 artifacts:
   pub:
