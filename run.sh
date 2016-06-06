@@ -2,6 +2,7 @@
 
 # LOG_FORMAT='$remote_addr - $remote_user [$time_local] "$request" $status $body_bytes_sent "$http_referer" "$http_user_agent" x="$http_x_forwarded_proto"'
 CONF_FILE=/etc/nginx/nginx.conf
+INDEX_FILE=/usr/share/nginx/html/index.html
 
 if [ -n "$LOG_FORMAT" ]; then
    ex $CONF_FILE <<EOF
@@ -13,5 +14,16 @@ x
 EOF
    
 fi
+
+if [ -z "$BODY_TEXT" ]; then
+   BODY_TEXT="Hello World"
+fi
+
+ex $INDEX_FILE <<EOF
+/<body>/ a
+$BODY_TEXT
+.
+x
+EOF
 
 exec /usr/sbin/nginx
