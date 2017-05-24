@@ -9,10 +9,17 @@
   },
   "Resources": {
     "MMMTestQueue": {
-      "Type" : "AWS::SQS::Queue",
-      "Properties" : {
+      "Type": "AWS::SQS::Queue",
+      "Properties": {
         "QueueName": { "Ref": "QueueName" }
       }
-    }     
+    },
+    "AnotherTestQueue": {
+      "Type": "AWS::SQS::Queue",
+      "Properties": {
+        "QueueName": { "Ref": "QueueName" }
+      },
+      "DependsOn": "MMMTestQueue"
+    }
   }
 }
