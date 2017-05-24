@@ -1,0 +1,13 @@
+{
+  "mmm-test-cf":
+    [
+      {
+        "stackId": "mmm-test-cf",
+        "template": "cloudformation/cf.json",
+        "parameters": "cloudformation/dev/us-west-2/mmm-test-cf.json",
+        "region": "us-west-2",
+        "stackPolicy": "cloudformation/policies/default.json",
+        "updatePolicy": "cloudformation/policies/update.json"
+      }
+    ]
+}

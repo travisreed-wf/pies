@@ -1,0 +1,6 @@
+[
+  {
+    "ParameterKey": "QueueName",
+    "ParameterValue": "mmm-test-cf"
+  }
+}

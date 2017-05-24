@@ -1,0 +1,18 @@
+{
+  "AWSTemplateFormatVersion": "2010-09-09",
+  "Description": "My service stack",
+  "Parameters": {
+    "QueueName": {
+      "Description": "Name for the queue",
+      "Type": "String"
+    }
+  },
+  "Resources": {
+    "MMMTestQueue": {
+      "Type" : "AWS::SQS::Queue",
+      "Properties" : {
+        "QueueName": { "Ref": "QueueName" }
+      }
+    }     
+  }
+}
