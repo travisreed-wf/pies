@@ -5,7 +5,7 @@
     "StreamName": {
       "Description": "Name of stream",
       "Type": "String",
-      "Default": { "Ref": "AWS::NoValue" }
+      "Default": ""
     },
     "NumberOfShards": {
       "Description": "Number of shards for the stream",
@@ -13,7 +13,7 @@
     }
   },
   "Conditions": {
-    "SetStreamName": { "Fn::Not": [ { "Fn::Equal": [ { "Ref": "StreamName" }, { "Ref": "AWS::NoValue" } ] } ] }
+    "SetStreamName": { "Fn::Not": [ { "Fn::Equal": [ { "Ref": "StreamName" }, "" ] } ] }
   },
   "Resources": {
     "MMMTestKinesis": {
