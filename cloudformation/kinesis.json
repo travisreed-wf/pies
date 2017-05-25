@@ -24,7 +24,7 @@
         "Tags": [
           { "Key": "Service", "Value": "Harbour" },
           { "Key": "Owner", "Value": "InfEng" },
-          { "Key": "Purpose", "Value": "Mark Manness test stream" },
+          { "Key": "Purpose", "Value": "Mark Manness test CF stream" },
           { "Key": "Business-Unit", "Value": "INFRE" },
           { "Key": "Role", "Value": "Dev"}
         ]
