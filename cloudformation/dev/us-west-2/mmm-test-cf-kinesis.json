@@ -1,6 +1,6 @@
 [
   {
     "ParameterKey": "NumberOfShards",
-    "ParameterValue": 2
+    "ParameterValue": "2"
   }
 ]
