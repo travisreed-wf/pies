@@ -4,7 +4,7 @@
       {
         "stackId": "mmm-test-cf-sqs",
         "template": "cloudformation/sqs.json",
-        "parameters": "cloudformation/dev/us-west-2/mmm-test-sqs.json",
+        "parameters": "cloudformation/dev/us-west-2/mmm-test-cf-sqs.json",
         "region": "us-west-2",
         "stackPolicy": "cloudformation/policies/default.json",
         "updatePolicy": "cloudformation/policies/update.json"
@@ -15,7 +15,7 @@
       {
         "stackId": "mmm-test-cf-kinesis",
         "template": "cloudformation/kinesis.json",
-        "parameters": "cloudformation/dev/us-west-2/mmm-test-kinesis.json",
+        "parameters": "cloudformation/dev/us-west-2/mmm-test-cf-kinesis.json",
         "region": "us-west-2",
         "stackPolicy": "cloudformation/policies/default.json",
         "updatePolicy": "cloudformation/policies/update.json"
