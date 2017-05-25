@@ -1,6 +1,6 @@
 {
   "AWSTemplateFormatVersion": "2010-09-09",
-  "Description": "My service stack",
+  "Description": "My service stack for testing",
   "Parameters": {
     "StreamName": {
       "Description": "Name of stream",
