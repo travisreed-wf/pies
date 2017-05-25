@@ -13,7 +13,7 @@
     }
   },
   "Conditions": {
-    "SetStreamName": { "Fn::Not": [ { "Fn::Equal": [ { "Ref": "StreamName" }, "" ] } ] }
+    "SetStreamName": { "Fn::Not": [ { "Fn::Equals": [ { "Ref": "StreamName" }, "" ] } ] }
   },
   "Resources": {
     "MMMTestKinesis": {
