@@ -13,13 +13,13 @@
       "Properties" : {
         "Name": "mmm-test-cf-kinesis",
         "ShardCount": { "Ref": "NumberOfShards" },
-        "Tags": {
-          "Service": "Harbour",
-          "Owner": "InfEng",
-          "Purpose": "Mark Manness test cluster",
-          "Business-Unit": "INFRE",
-          "Role": "Dev"
-        }
+        "Tags": [
+          { "Key": "Service", "Value": "Harbour" },
+          { "Key": "Owner", "Value": "InfEng" },
+          { "Key": "Purpose", "Value": "Mark Manness test stream" },
+          { "Key": "Business-Unit", "Value": "INFRE" },
+          { "Key": "Role", "Value": "Dev"}
+        ]
       }
     }     
   }
