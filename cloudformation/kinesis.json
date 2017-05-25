@@ -1,0 +1,26 @@
+{
+  "AWSTemplateFormatVersion": "2010-09-09",
+  "Description": "My service stack",
+  "Parameters": {
+    "NumberOfShards": {
+      "Description": "Number of shards for the stream",
+      "Type": "Number"
+    }
+  },
+  "Resources": {
+    "MMMTestKinesis": {
+      "Type" : "AWS::Kinesis::Stream",
+      "Properties" : {
+        "Name": "mmm-test-cf-kinesis",
+        "ShardCount": { "Ref": "NumberOfShards" },
+        "Tags": {
+          "Service": "Harbour",
+          "Owner": "InfEng",
+          "Purpose": "Mark Manness test cluster",
+          "Business-Unit": "INFRE",
+          "Role": "Dev"
+        }
+      }
+    }     
+  }
+}
