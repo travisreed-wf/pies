@@ -2,16 +2,24 @@
   "AWSTemplateFormatVersion": "2010-09-09",
   "Description": "My service stack",
   "Parameters": {
+    "StreamName": {
+      "Description": "Name of stream",
+      "Type": "String",
+      "Default": { "Ref": "AWS::NoValue" }
+    },
     "NumberOfShards": {
       "Description": "Number of shards for the stream",
       "Type": "Number"
     }
   },
+  "Conditions": {
+    "SetStreamName": { "Fn::Not": [ { "Fn::Equal": [ { "Ref": "StreamName" }, { "Ref": "AWS::NoValue" } ] } ] }
+  },
   "Resources": {
     "MMMTestKinesis": {
       "Type" : "AWS::Kinesis::Stream",
       "Properties" : {
-        "Name": "mmm-test-cf-kinesis",
+        "Name": { "Fn::If": [ "SetStreamName", { "Ref": "StreamName" }, { "Ref": "AWS::NoValue" } ] },
         "ShardCount": { "Ref": "NumberOfShards" },
         "Tags": [
           { "Key": "Service", "Value": "Harbour" },
