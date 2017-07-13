@@ -19,8 +19,13 @@ if [ -z "$BODY_TEXT" ]; then
    BODY_TEXT="Hello World"
 fi
 
+if [ -z "$SERVER_NAME" ]; then
+   SERVER_NAME=$(uname -n)
+fi
+
 ex $INDEX_FILE <<EOF
 /<body>/ a
+Server: $SERVER_NAME
 $BODY_TEXT
 .
 x
