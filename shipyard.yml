@@ -8,9 +8,12 @@ apt:
 add:
   index.html: /usr/share/nginx/html/index.html
   run.sh: /usr/local/bin/run.sh
+  server.conf: /etc/nginx/sites-available/server
 
 after_install:
   - echo "daemon off;" >> /etc/nginx/nginx.conf
+  - rm /etc/nginx/sites-enabled/default
+  - ln -s /etc/nginx/sites-available/server /etc/nginx/sites-enabled/server
 
 expose:
   - 80
