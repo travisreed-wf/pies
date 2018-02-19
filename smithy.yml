@@ -8,7 +8,7 @@ runner_image: drydock-prod.workiva.net/workiva/smithy-runner-golang:121185
 script:
   - cd $GOPATH/src/github.com/danielrowles-wf/pies && glide install
   - cd $GOPATH/src/github.com/danielrowles-wf/pies && go build -x -o pies-server
-  - cp $GOPATH/src/github.com/danielrowles-wf/pies-server .
+  - cp $GOPATH/src/github.com/danielrowles-wf/pies/pies-server .
 
 artifacts:
   release:
