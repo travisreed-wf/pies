@@ -1,0 +1,82 @@
+hash: 376f08dd94b2777a97f0f80cf01bb97414420ffd20e4809f0b7f4b0eb1c9235f
+updated: 2018-02-19T12:07:45.439557375-06:00
+imports:
+- name: git.apache.org/thrift.git
+  version: cdc83335d60756c4bfb0d2c8af7933500c9e3c06
+  subpackages:
+  - lib/go/thrift
+- name: github.com/golang/protobuf
+  version: bbd03ef6da3a115852eaf24c8a1c46aeb39aa175
+  subpackages:
+  - proto
+- name: github.com/mattrobenolt/gocql
+  version: 56c5a46b65eead93e1e53e983d1b2e7dbfde570d
+  subpackages:
+  - uuid
+- name: github.com/nats-io/go-nats
+  version: 6b6bf392d34d01f57cc563ae123f00c13778bd57
+  subpackages:
+  - encoders/builtin
+  - util
+- name: github.com/nats-io/nuid
+  version: 4f84f5f3b2786224e336af2e13dba0a0a80b76fa
+- name: github.com/pborman/uuid
+  version: cccd189d45f7ac3368a0d127efb7f4d08ae0b655
+- name: github.com/rcrowley/go-metrics
+  version: eeba7bd0dd01ace6e690fa833b3f22aaec29af43
+- name: github.com/Sirupsen/logrus
+  version: d682213848ed68c0a260ca37d6dd5ace8423f5ba
+- name: github.com/Workiva/app_intelligence_go
+  version: 82938a44db94275b88ca1147c3fac7137151c2b4
+- name: github.com/Workiva/frugal
+  version: b2c030e4dc9eb0f07382593be9b5c0535bce8645
+  subpackages:
+  - lib/go
+- name: github.com/Workiva/go-auth
+  version: cf3c5fc732228d78aa0cab2e1ee5ee5cf0697f2c
+  subpackages:
+  - oauth2
+  - v2/jwt
+- name: github.com/Workiva/messaging-sdk
+  version: 2db05645c3fc291cb81bbfe6c301c77ce466d22d
+  subpackages:
+  - lib/go/sdk
+- name: github.com/Workiva/vessel
+  version: feb07a171eee3535eb932c53a519f0e128c8fc04
+  subpackages:
+  - gen/go/vessel_v1
+  - gen/go/vessel_v1_exceptions
+- name: golang.org/x/crypto
+  version: 432090b8f568c018896cd8a0fb0345872bbac6ce
+  subpackages:
+  - ssh/terminal
+- name: golang.org/x/net
+  version: c4c3ea71919de159c9e246d7be66deb7f0a39a58
+  subpackages:
+  - context
+- name: golang.org/x/oauth2
+  version: c406a4cc4ba462e5dc2f16225c5bd9488f9cbe10
+  subpackages:
+  - internal
+  - jws
+  - jwt
+- name: golang.org/x/sys
+  version: 37707fdb30a5b38865cfb95e5aab41707daec7fd
+  subpackages:
+  - unix
+  - windows
+- name: google.golang.org/appengine
+  version: 5bee14b453b4c71be47ec1781b0fa61c2ea182db
+  subpackages:
+  - internal
+  - internal/base
+  - internal/datastore
+  - internal/log
+  - internal/remote_api
+  - internal/urlfetch
+  - urlfetch
+testImports:
+- name: github.com/stretchr/testify
+  version: f390dcf405f7b83c997eac1b06768bb9f44dec18
+  subpackages:
+  - assert

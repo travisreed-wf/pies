@@ -1,32 +1,15 @@
-project: python
-runtime: 2.7
+project: custom
+language: golang
 
-requirements:
-  - requirements.txt
-  - requirements_dev.txt
-
-env:
-  - LIKES=PIES
-  - EATS=TASTY_PIES
-  - EAT_PIES_SLOWLY=2
+# Use the "official" go 1.7 smithy runner
+#
+runner_image: drydock-prod.workiva.net/workiva/smithy-runner-golang:121185
 
 script:
-  - nosetests
-  - python setup.py sdist
-  - 'echo "ALL UR WEBFILINGS ARE BELONG TO WORKIVA: $HOME"'
-  - ls -al $HOME
-  - touch $HOME/pies.txt
-  - 'echo "TEST REPORTS DIR: $TEST_REPORTS_DIR"'
-  - mkdir test-reports || true
-  - cp test-xml/*.xml test-reports/
-  - find . -type f -ls
-  - ls -al test-reports/
-  - ls -al $HOME
+  - cd $GOPATH/src/github.com/Workiva/pies && glide install
+  - cd $GOPATH/src/github.com/Workiva/pies && go build -x -o pies-server
+  - cp $GOPATH/src/github.com/Workiva/pies-server .
 
-after_script:
-  - tar -C docs -cvzf ./pie-help.tar.gz html
-
-documentation: pie-help.tar.gz
-
-test_reports:
-  - test-reports/*.xml
+artifacts:
+  release:
+    - pies-server
