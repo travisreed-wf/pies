@@ -6,6 +6,7 @@ language: golang
 runner_image: drydock-prod.workiva.net/workiva/smithy-runner-golang:121185
 
 script:
+  - ls -R $GOPATH
   - cd $GOPATH/src/github.com/Workiva/pies && glide install
   - cd $GOPATH/src/github.com/Workiva/pies && go build -x -o pies-server
   - cp $GOPATH/src/github.com/Workiva/pies-server .
