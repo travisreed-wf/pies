@@ -23,7 +23,10 @@ RUN glide install
 RUN go build -x -o pies-server
 RUN cp pies-server /
 ARG BUILD_ARTIFACTS_RELEASE=/pies-server
-FROM build
+
+FROM drydock-prod.workiva.net/workiva/smithy-runner-golang:176833
+
+COPY --from-build /pies-server /pies-server
 
 ENTRYPOINT [ "/pies-server" ]
 
