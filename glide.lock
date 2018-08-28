@@ -1,5 +1,5 @@
-hash: 80dc24df8b5bd40cf89082cc00bed208a77ca77b1c622eccdb83913eb962c4ce
-updated: 2018-07-18T16:45:44.903058849-05:00
+hash: 1dc8ee2ae0c7d68f0fe857180d47b83eda576439540ffd79072f76075de031af
+updated: 2018-08-28T16:43:35.78026364-05:00
 imports:
 - name: git.apache.org/thrift.git
   version: cdc83335d60756c4bfb0d2c8af7933500c9e3c06
@@ -27,14 +27,14 @@ imports:
 - name: github.com/rcrowley/go-metrics
   version: eeba7bd0dd01ace6e690fa833b3f22aaec29af43
 - name: github.com/Sirupsen/logrus
-  version: d682213848ed68c0a260ca37d6dd5ace8423f5ba
+  version: ba1b36c82c5e05c4f912a88eab0dcd91a171688f
 - name: github.com/Workiva/app_intelligence_go
-  version: f02807ee572d3e6ff6245758e11ba4b5e6f05c6d
+  version: b0a65b497ead4397ffd4cf9e323a868520e340af
   subpackages:
   - telemetry
   - writers
 - name: github.com/Workiva/frugal
-  version: f198cffebebfa5cd032cc0c836586361f22e3a44
+  version: de98442eaedae0d4219b96b09ae54f20a59493cf
   subpackages:
   - lib/go
 - name: github.com/Workiva/go-auth
@@ -43,7 +43,7 @@ imports:
   - oauth2
   - v2/jwt
 - name: github.com/Workiva/messaging-sdk
-  version: 2db05645c3fc291cb81bbfe6c301c77ce466d22d
+  version: 7e41130c1210b6ca5ab929f26be49fa1d35519f4
   subpackages:
   - lib/go/sdk
 - name: github.com/Workiva/vessel
@@ -51,10 +51,6 @@ imports:
   subpackages:
   - gen/go/vessel_v1
   - gen/go/vessel_v1_exceptions
-- name: golang.org/x/crypto
-  version: 432090b8f568c018896cd8a0fb0345872bbac6ce
-  subpackages:
-  - ssh/terminal
 - name: golang.org/x/net
   version: c4c3ea71919de159c9e246d7be66deb7f0a39a58
   subpackages:
@@ -66,10 +62,9 @@ imports:
   - jws
   - jwt
 - name: golang.org/x/sys
-  version: 37707fdb30a5b38865cfb95e5aab41707daec7fd
+  version: 076b546753157f758b316e59bcb51e6807c04057
   subpackages:
   - unix
-  - windows
 - name: google.golang.org/appengine
   version: 5bee14b453b4c71be47ec1781b0fa61c2ea182db
   subpackages:
