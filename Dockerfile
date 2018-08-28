@@ -26,7 +26,7 @@ ARG BUILD_ARTIFACTS_RELEASE=/pies-server
 
 FROM drydock-prod.workiva.net/workiva/smithy-runner-golang:176833
 
-COPY --from-build /pies-server /pies-server
+COPY --from=build /pies-server /pies-server
 
 ENTRYPOINT [ "/pies-server" ]
 
