@@ -12,6 +12,8 @@ import (
 )
 
 func main() {
+	// Add arg parse
+
     meter := metrics.NewMeter()
     metrics.Register("quux", meter)
     meter.Mark(47)
