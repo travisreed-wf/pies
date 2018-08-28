@@ -1,18 +1,24 @@
 package main
 
 import (
+	"io/ioutil"
     "time"
 
 	log "github.com/Sirupsen/logrus"
 
+    "github.com/Workiva/app_intelligence_go/telemetry"
     "github.com/Workiva/app_intelligence_go"
+    "github.com/rcrowley/go-metrics"
 )
 
 func main() {
-    config := appintel.GetDefaultConfig()
-	// config := appintel.GetLocalDevConfig()
+    meter := metrics.NewMeter()
+    metrics.Register("quux", meter)
+    meter.Mark(47)
+
+    config := telemetry.GetDefaultConfig()
 	config.Interval = 5 * time.Second
-    reporter, err := appintel.NewTelemetryReporterWithConfig(config)
+    reporter, err := telemetry.NewReporterWithConfig(config)
     // current reporter constructors will always return a nil error.
     // The error is returned to allow for future changes without
     // breaking stuff.
@@ -21,9 +27,18 @@ func main() {
     }
     go reporter.Start()
 
-    log.Info("Starting REST server")
+    hook := appintel.NewHook()
 
-	s := GetRestServer()
+    log.AddHook(hook)
+    log.SetOutput(ioutil.Discard) // prevent duplicate logs
 
-	log.Fatal(s.Run())
+	log.WithFields(log.Fields{
+		"correlationId": "abc123",
+		"bar": 100,
+		"foo": "yo",
+	}).Info("I am a walrus")
+
+	log.Info("Sleeping")
+
+	time.Sleep(60 * time.Second)
 }
