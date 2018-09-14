@@ -20,13 +20,13 @@ WORKDIR ${BUILD_DIR}
 ARG BUILD_ARTIFACTS_AUDIT=/${BUILD_DIR}/glide.lock
 
 RUN glide install
-RUN go build -x -o pies-server
-RUN cp pies-server /
-ARG BUILD_ARTIFACTS_RELEASE=/pies-server
+RUN go build -x -o pie-in-the-face
+RUN cp pie-in-the-face /pie-in-the-face/pie-in-the-face
+ARG BUILD_ARTIFACTS_RELEASE=/pie-in-the-face
 
 FROM drydock-prod.workiva.net/workiva/smithy-runner-golang:176833
 
-COPY --from=build /pies-server /pies-server
+COPY --from=build /pie-in-the-face/pie-in-the-face /pie-in-the-face/pie-in-the-face
 
-ENTRYPOINT [ "/pies-server" ]
+ENTRYPOINT [ "/pie-in-the-face/pie-in-the-face" ]
 
