@@ -21,6 +21,7 @@ ARG BUILD_ARTIFACTS_AUDIT=/${BUILD_DIR}/glide.lock
 
 RUN glide install
 RUN go build -x -o pie-in-the-face
+RUN mkdir /pie-in-the-face
 RUN cp pie-in-the-face /pie-in-the-face/pie-in-the-face
 ARG BUILD_ARTIFACTS_RELEASE=/pie-in-the-face
 
