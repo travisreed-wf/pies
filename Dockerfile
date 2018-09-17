@@ -25,7 +25,7 @@ RUN mkdir /pie-in-the-face
 RUN cp pie-in-the-face /pie-in-the-face/pie-in-the-face
 ARG BUILD_ARTIFACTS_RELEASE=/pie-in-the-face
 
-RUN touch /helm && tar cf /helm.tar.gz /helm
+RUN touch helm && tar cf /helm.tar.gz helm
 ARG BUILD_ARTIFACTS_HELM=/helm.tar.gz
 
 FROM drydock-prod.workiva.net/workiva/smithy-runner-golang:176833
