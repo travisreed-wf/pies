@@ -1,0 +1,4 @@
+apiVersion: v1
+name: pies
+description: A Helm chart for pies
+version: '0.1.0'

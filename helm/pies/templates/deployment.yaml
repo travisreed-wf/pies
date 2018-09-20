@@ -1,0 +1,25 @@
+apiVersion: apps/v1beta2
+kind: Deployment
+metadata:
+  name: {{ template "template.fullname" . }}
+  labels:
+    app: {{ template "template.name" . }}
+    chart: {{ template "template.chart" . }}
+    release: {{ .Release.Name }}
+    heritage: {{ .Release.Service }}
+spec:
+  replicas: {{ .Values.replicas }}
+  selector:
+    matchLabels:
+      app: {{ template "template.name" . }}
+      release: {{ .Release.Name }}
+  template:
+    metadata:
+      labels:
+        app: {{ template "template.name" . }}
+        release: {{ .Release.Name }}
+    spec:
+      containers:
+      - name: {{ .Chart.Name }}
+        image: '{{.Values.image.repository}}/{{.Values.image.repo}}:{{.Values.image.tag}}'
+        args: [ "--log-rate", "{{.Values.logRate}}" ]
