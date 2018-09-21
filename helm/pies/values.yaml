@@ -4,9 +4,9 @@
 # Declare variables to be passed into your templates.
 # Docker image to run.
 image: 
-  repository: drydock.workiva.net
-  repo: markmanness-wf/pies
-  tag: 1419630
+  repository: 'drydock.workiva.net'
+  repo: 'markmanness-wf/pies'
+  tag: '1419630'
 # Number of pods replicas to run.
 replicas: 3
 
