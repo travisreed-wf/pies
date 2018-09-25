@@ -11,4 +11,4 @@ image:
 replicas: 3
 
 # Rate per sec to emit logs
-logRate: 1
+logRate: 10

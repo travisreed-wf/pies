@@ -1,0 +1,4 @@
+apiVersion: v1
+name: cakes
+description: A Helm chart for cakes
+version: '0.1.0'
