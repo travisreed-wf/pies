@@ -33,5 +33,4 @@ FROM drydock-prod.workiva.net/workiva/smithy-runner-golang:176833
 COPY --from=build /pie-in-the-face/pie-in-the-face /pie-in-the-face/pie-in-the-face
 USER nobody
 
-ENTRYPOINT [ "/pie-in-the-face/pie-in-the-face" ]
-
+CMD [ "/pie-in-the-face/pie-in-the-face" ]
